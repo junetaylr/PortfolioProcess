@@ -1,0 +1,393 @@
+/* Reset default margins */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1100px;   /* Limit width */
+    margin: 0 auto;     /* Center it */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Closer spacing */
+    padding: 0 25px;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    z-index: 1000;
+}
+
+/* Navigation bar bottom border */
+nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* subtle light gray line */
+}
+
+/* Footer top border */
+.footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.08); /* matches nav style */
+}
+
+
+/* Nav Items */
+nav .nav-left,
+nav .nav-center,
+nav .nav-right {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+nav span:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+/* Logo Styling */
+.nav-right img {
+    height: 40px;          /* bigger so it’s visible */
+    width: 40px;           /* match height */
+    border-radius: 50%;    /* makes it a circle */
+    object-fit: cover;     /* keeps it proportionate */
+    border: 2px solid rgb(255, 255, 255); /* optional subtle border */
+}
+
+
+/* Hero Section for Demo */
+.hero {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.portfolio {
+    max-width: 700px; /* matches nav width */
+    margin: 100px auto; /* centers and gives space from nav */
+    display: flex;
+    justify-content: center; /* centers image horizontally */
+}
+
+.portfolio img {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+/* Intro Section */
+.intro {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    position: absolute;
+    top: 50px;       /* pushes it down slightly from the nav */
+    left: 50px;      /* pushes it in from the left */
+    z-index: 3;      /* ensures it’s above the image */
+}
+
+.intro .highlight {
+    color: rgb(246, 192, 166);  
+}
+
+.portfolio {
+    position: relative;
+    max-width: 900px;
+    margin: 150px auto 0 auto; /* extra top space so text overlaps */
+}
+
+.portfolio img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* Container for mockup + text */
+.mockup-wrapper {
+    position: relative; /* needed so .intro-text is positioned relative to this container */
+    display: inline-block;
+    width: 100%;
+}
+
+/* Mockup image */
+.mockup-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Intro text box overlapping mockup */
+.intro-text {
+    position: absolute;
+    bottom: -10px;   /* stays near bottom */
+    left: -10px;     /* stays on left */
+    background: white;
+    padding: 20px;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+    font-family: 'Helvetica Neue', sans-serif; /* match nav font */
+    font-size: 1.8rem;
+    font-weight: 500; /* same as nav */
+    color: #000;
+    line-height: 1.3;
+    z-index: 2; /* ensures it sits above the mockup image */
+}
+
+.intro-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+/* Highlighted text */
+.intro-text .highlight {
+    color: rgb(246, 192, 166); /* theme color */
+}
+
+/* Responsive adjustment so it doesn’t hang off the page on smaller screens */
+@media (max-width: 768px) {
+    .intro-text {
+        position: static; /* stops absolute positioning on small screens */
+        max-width: 100%;
+        margin-top: 15px;
+        box-shadow: none;
+    }
+}
+
+/* About Me Section */
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background: #ffffff; /* light background to separate sections */
+}
+
+/* Glass-style container */
+.about-container {
+    max-width: 900px;
+    padding: 40px;
+    background: rgb(255, 255, 255); /* frosted glass effect */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.about-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+/* About Me heading */
+.about-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* About Me text */
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+/* Hide default cursor */
+body {
+    cursor: none;
+}
+
+/* Custom cursor element */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background: rgb(246, 192, 166); /* solid orange */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease-out;
+    z-index: 9999;
+}
+
+/* Enlarged cursor on hover */
+.cursor.hover {
+    transform: translate(-50%, -50%) scale(2);
+    background: rgba(246, 192, 166); /* semi-transparent on hover */
+}
+/* Keep regular arrow by default */
+body {
+    cursor: auto;
+}
+
+/* Black Circle Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    z-index: 9999;
+    opacity: 0; /* Hidden by default */
+}
+
+/* Hide default cursor ONLY when circle is active */
+body.cursor-active {
+    cursor: none;
+}
+
+
+/* When active, show circle */
+.cursor.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* === Contact Section Cursor Fix === */
+.contact-section,
+.contact-section * {
+    cursor: none !important;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+
+/* Glass Box (Matches About Me style) */
+.contact-box {
+    width: 1100px; /* same width as about me */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 30px 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: none; /* ensures default cursor is hidden for your custom circle */
+}
+
+.contact-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.contact-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Contact Button */
+.contact-btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.25s ease;
+}
+
+.contact-btn:hover {
+    background: rgb(246, 192, 166); /* Orange hover */
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+.footer-section {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-right a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: rgb(246, 192, 166); /* Matches your hover style */
+}
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.about-box {
+    max-width: 500px; /* Narrow column like the example */
+    text-align: left;
+    line-height: 1.0; /* Tighter line spacing */
+    font-size: 16px;
+    font-family: Helvetica, sans-serif; /* Matches the rest of your site */
+}
+
+.about-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Helvetica, sans-serif;
+}
+
+.about-box p {
+    margin-bottom: 14px; /* Less gap between paragraphs */
+}
+
